@@ -9,6 +9,7 @@ function USFlag() {
       height="650"
       viewBox="0 0 7410 3900"
       className="h-5 w-5"
+      alt="USA Flag"
     >
       <path fill="#b22234" d="M0 0H7410V3900H0z"></path>
       <path

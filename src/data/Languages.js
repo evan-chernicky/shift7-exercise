@@ -1,9 +1,9 @@
-import USFlag from '../assets/USFlag.js'
+import USFlag from '../assets/svg/USFlag.js'
 
 export const languages = [
     {
         name: "English",
         abbreviation: "EN",
-        icon: USFlag,
+        icon: <USFlag />,
     },
 ]

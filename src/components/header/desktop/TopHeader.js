@@ -11,7 +11,7 @@ function TopHeader() {
         <div className="w-full flex justify-between bg-black items-center pr-3">
             <div className="h-full">
                 <button className="flex flex-row items-center h-full px-3 hover:bg-red focus:bg-red duration-300" aria-label="select language">
-                    {language.icon()}
+                    {language.icon}
                     <span className="pl-1">{language.abbreviation}</span>   
                 </button>
             </div>
