@@ -2,7 +2,9 @@ import React from 'react'
 
 function DesktopNav() {
   return (
-    <div>DesktopNav</div>
+    <div className="h-16 drop-shadow-xl">
+
+    </div>
   )
 }
 

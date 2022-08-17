@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App min-h-screen">
+    <div className="App min-h-screen bg-white">
       <Header />
     </div>
   );
