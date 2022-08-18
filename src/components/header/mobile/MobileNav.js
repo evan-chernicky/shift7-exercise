@@ -6,7 +6,7 @@ function MobileNav({setMobileNav}) {
   const [cartNumber, setCartNumber] = useState(0)
 
   return (
-    <div className="h-12 flex items-center p-3 justify-between mobile">
+    <div className="h-12 flex items-center p-3 justify-between mobile bg-white">
       <div className="flex items-center hover:text-red focus:text-red duration-300">
         <button onClick={() => setMobileNav(true)}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
