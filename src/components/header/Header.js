@@ -8,6 +8,7 @@ import PulloutNav from './mobile/PulloutNav'
 function Header() {
 
   const [width, setWidth] = useState(window.innerWidth)
+  const [cartNumber, setCartNumber] = useState(0)
   const [isNavClicked, setIsNavClicked] = useState(false)
   const [navChildren, setNavChildren] = useState(null)
   const [mobileNav, setMobileNav] = useState(null)
@@ -31,15 +32,15 @@ function Header() {
 
   return (
     <header className="App-header fixed top-0 left-0 w-full h-full drop-shadow-xl overflow-hidden font-noto-sans font-700">
-      {width > 768 ? (
+      {width > 900 ? (
             <>
-              <TopHeader />
+              <TopHeader setCartNumber={setCartNumber} cartNumber={cartNumber}/>
               <DesktopNav setLowerNav={setLowerNav} isNavClicked={isNavClicked}/>
               {isNavClicked ? <SecondaryDesktopNav navChildren={navChildren}/> : null}
             </>
         ) : (
           <>
-            <MobileNav setMobileNav={setMobileNav}/>
+            <MobileNav setMobileNav={setMobileNav} setCartNumber={setCartNumber} cartNumber={cartNumber}/>
             <PulloutNav setMobileNav={setMobileNav} mobileNav={mobileNav} setNavChildren={setNavChildren} navChildren={navChildren}/>
           </>
         )}

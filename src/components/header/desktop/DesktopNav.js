@@ -6,8 +6,9 @@ import Logo from '../../../assets/svg/Logo.js'
 function DesktopNav({setLowerNav}) {
 
     const [clickedItem, setClickedItem] = useState(null)
-
+    
 function handleNavigationClick(children, menuItem) {
+    //if closing secondary nav, set menuItem to null, else set it to what was clicked to make it active
     clickedItem === menuItem ? setClickedItem(null) : setClickedItem(menuItem)
     setLowerNav(children)
 }
@@ -26,6 +27,7 @@ function handleNavigationClick(children, menuItem) {
                             aria-controls="secondaryNav" 
                             aria-haspopup="true"
                             tabindex="0"
+                            className="uppercase"
                             >
                             {item.name}
                             </button>
