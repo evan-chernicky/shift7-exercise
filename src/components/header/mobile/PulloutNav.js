@@ -1,19 +1,45 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import SecondaryNav from './SecondaryMobileNav'
 import {NavItems} from '../../../data/NavItems.js'
 import {languages} from '../../../data/Languages.js'
 
 
-function PulloutNav({setMobileNav, mobileNav}) {
+function PulloutNav({setMobileNav, mobileNav, setNavChildren, navChildren}) {
 
     const [language, setLanguage] = useState(languages[0])
+    const [mainAnimation, setMainAnimation] = useState("invisible")
+    const [secondaryAnimation, setSecondsaryAnimation] = useState("invisible")
+    const [isSecondaryOn, setIsSecondaryOn] = useState(false)
 
-    const animation = mobileNav ? "slide-in-right" : "slide-out-right"
-    const visibility = mobileNav === null ? "invisible" : ""
+    //updates animation on main menu on main menu toggle
+    useEffect(() => { 
+        updateAnimation(mobileNav, setMainAnimation)
+    }, [mobileNav])
+
+    //updates animation on secondary menu on main menu toggle
+    useEffect(() => { 
+        updateAnimation(isSecondaryOn, setSecondsaryAnimation)
+    }, [isSecondaryOn])
+
+    //handles animation update dynamically
+    function updateAnimation(toggle, setMenuAnimation) {
+        if (toggle) {
+            setMenuAnimation("slide-in-right")
+        } 
+        if (toggle === false) {
+            setMenuAnimation("slide-out-right")
+        } 
+    }
+
+    function handleSecondaryNav(children) {
+        setNavChildren(children)
+        setIsSecondaryOn(true)
+    }
 
 
   return (
-    <div className={`absolute z-10 top-0 left-0 h-screen w-screen flex flex-col bg-white ${visibility} ${animation}`}>
-        <div className="bg-black flex items-center justify-between text-white px-3 py-2">
+    <div className={`absolute z-10 top-0 left-0 h-screen w-screen flex flex-col bg-white ${mainAnimation}`}>
+        <div className="relative bg-black flex items-center justify-between text-white px-3 py-2">
             <span>Menu</span>
             <button onClick={() => setMobileNav(false)} className="hover:text-red focus:text-red duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -21,12 +47,20 @@ function PulloutNav({setMobileNav, mobileNav}) {
                 </svg>
             </button>
         </div>
-        <div className="h-full">
+        <div className="h-full relative">
+        <SecondaryNav navChildren={navChildren} secondaryAnimation={secondaryAnimation} setIsSecondaryOn={setIsSecondaryOn}/>
             <nav>
                 <ul className="border-y">
                     {NavItems.map(item => (
                         <li key={item.name}>
-                            <button className="w-full p-3 border-y flex justify-between items-center hover:text-red focust-text-red duration-300">
+                            <button 
+                            className="w-full p-3 border-y flex justify-between items-center hover:text-red focust-text-red duration-300"
+                            onClick={() => handleSecondaryNav(item.children)} 
+                            type="button" 
+                            aria-controls="secondaryNav" 
+                            aria-haspopup="true"
+                            tabindex="0"
+                            >
                                 <span className="uppercase font-bold">{item.name}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -65,14 +99,13 @@ function PulloutNav({setMobileNav, mobileNav}) {
                     </button>
                 </li>
                 <li>
-                    <button className="pl-1 flex flex-row items-center h-full hover:bg-red focus:bg-red duration-300" aria-label="select language">
+                    <button className="pl-1 flex flex-row items-center h-full hover:text-red focus:text-red duration-300" aria-label="select language">
                         {language.icon}
                         <span className="pl-1">{language.abbreviation}</span>   
                     </button>
                 </li>
             </ul>
         </div>
-
     </div>
   )
 }

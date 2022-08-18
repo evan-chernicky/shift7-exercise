@@ -26,7 +26,7 @@ function handleNavigationClick(children, menuItem) {
                             aria-controls="secondaryNav" 
                             aria-haspopup="true"
                             tabindex="0"
-                            aria-expanded={clickedItem === item.name ? "true" : "false"}>
+                            >
                             {item.name}
                             </button>
                         </li>

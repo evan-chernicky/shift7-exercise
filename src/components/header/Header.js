@@ -40,7 +40,7 @@ function Header() {
         ) : (
           <>
             <MobileNav setMobileNav={setMobileNav}/>
-            <PulloutNav setMobileNav={setMobileNav} mobileNav={mobileNav}/>
+            <PulloutNav setMobileNav={setMobileNav} mobileNav={mobileNav} setNavChildren={setNavChildren} navChildren={navChildren}/>
           </>
         )}
     </header>
