@@ -3,12 +3,14 @@ import TopHeader from './desktop/TopHeader'
 import DesktopNav from './desktop/DesktopNav'
 import SecondaryDesktopNav from './desktop/SecondaryDesktopNav'
 import MobileNav from './mobile/MobileNav'
+import PulloutNav from './mobile/PulloutNav'
 
 function Header() {
 
   const [width, setWidth] = useState(window.innerWidth)
   const [isNavClicked, setIsNavClicked] = useState(false)
   const [navChildren, setNavChildren] = useState(null)
+  const [mobileNav, setMobileNav] = useState(null)
 
   //gets window size on resize
   window.addEventListener("resize", updateDimensions)
@@ -28,7 +30,7 @@ function Header() {
   }
 
   return (
-    <header className="App-header absolute top-0 left-0 w-full drop-shadow-xl bg-white">
+    <header className="App-header absolute top-0 left-0 w-full drop-shadow-xl bg-white overflow-hidden">
       {width > 768 ? (
             <>
               <TopHeader />
@@ -36,7 +38,10 @@ function Header() {
               {isNavClicked ? <SecondaryDesktopNav navChildren={navChildren}/> : null}
             </>
         ) : (
-            <MobileNav />
+          <>
+            <MobileNav setMobileNav={setMobileNav}/>
+            <PulloutNav setMobileNav={setMobileNav} mobileNav={mobileNav}/>
+          </>
         )}
     </header>
   )
