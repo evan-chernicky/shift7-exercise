@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.mobile .logo {
+  height: 32px;
+}
 
 .main-nav .active, .main-nav li:hover {
   transition: 0.3s;

@@ -24,7 +24,9 @@ function handleNavigationClick(children, menuItem) {
                             onClick={() => handleNavigationClick(item.children, item.name)} 
                             type="button" 
                             aria-controls="secondaryNav" 
-                            aria-expanded="false">
+                            aria-haspopup="true"
+                            tabindex="0"
+                            aria-expanded={clickedItem === item.name ? "true" : "false"}>
                             {item.name}
                             </button>
                         </li>

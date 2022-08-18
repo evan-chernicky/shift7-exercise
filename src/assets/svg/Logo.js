@@ -9,7 +9,7 @@ function Icon() {
       fill="none"
       viewBox="0 0 117 41"
       alt="Lincoln Electric Logo"
-      className="duration-300 hover:scale-90 focus:scale-90"
+      className="duration-300 hover:scale-90 focus:scale-90 logo"
     >
       <path
         fill="#fff"

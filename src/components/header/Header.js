@@ -28,7 +28,7 @@ function Header() {
   }
 
   return (
-    <header className="App-header absolute top-0 left-0 w-full drop-shadow-xl">
+    <header className="App-header absolute top-0 left-0 w-full drop-shadow-xl bg-white">
       {width > 768 ? (
             <>
               <TopHeader />
