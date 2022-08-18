@@ -7,7 +7,7 @@ function TopHeader() {
     const [language, setLanguage] = useState(languages[0])
 
   return (
-    <div className="w-full flex justify-between text-white h-9">
+    <div className="w-full flex justify-between text-white h-9 relative z-10">
         <div className="w-full flex justify-between bg-black items-center pr-3">
             <div className="h-full">
                 <button className="flex flex-row items-center h-full px-3 hover:bg-red focus:bg-red duration-300" aria-label="select language">

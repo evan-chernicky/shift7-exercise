@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.main-nav .active, .main-nav li:hover {
+  transition: 0.3s;
+  color: theme('colors.red')
+}
+.main-nav .active::after, .main-nav li:hover::after {
+  transition: 0.3s;
+  position: absolute;
+  width: 100%;
+  content: "";
+  display: block;
+  height: 3px;
+  background: theme('colors.red');
+  left: 0;
+  bottom: -20px;
+  animation: nav-underline 0.5s ease-out both;
+}
+
+@keyframes nav-underline {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleX(100%);
+            transform: scaleX(100%);
+    opacity: 1;
+  }
+}
+
+/*Animation SlideIn*/
+.slide-in-top {
+	-webkit-animation: slide-in-top 0.5s ease-out both;
+	        animation: slide-in-top 0.5s ease-out both;
+}
+
+ @-webkit-keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+      background: #fff;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+      background: #fff;
+
+    }
+  }
+  @keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
