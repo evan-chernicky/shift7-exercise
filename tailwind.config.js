@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
@@ -11,6 +14,9 @@ module.exports = {
     extend: {
       colors: {
         red: '#B81830',
+      },
+      fontFamily: {
+        'noto-sans': ["'Noto Sans', sans-serif", ...defaultTheme.fontFamily.sans],
       },
     },
   },

@@ -30,7 +30,7 @@ function Header() {
   }
 
   return (
-    <header className="App-header fixed top-0 left-0 w-full h-screen drop-shadow-xl overflow-hidden">
+    <header className="App-header fixed top-0 left-0 w-full h-full drop-shadow-xl overflow-hidden font-noto-sans font-700">
       {width > 768 ? (
             <>
               <TopHeader />
