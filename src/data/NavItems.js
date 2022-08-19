@@ -4,19 +4,19 @@ export const NavItems = [
         children: [
             {
                 name: "Solutions By Industry",
-                link: "/"
+                link: "/solutions/industry"
             },
             {
                 name: "Solutions By Process",
-                link: "/"
+                link: "/solutions/process"
             },
             {
                 name: "Software Solutions",
-                link: "/"
+                link: "/solutions/software"
             },
             {
                 name: "Services",
-                link: "/"
+                link: "/services"
             },
         ]
     },
@@ -25,31 +25,31 @@ export const NavItems = [
         children: [
             {
                 name: "Equipment",
-                link: "/"
+                link: "/equipment"
             },
             {
                 name: "Consumables",
-                link: "/"
+                link: "/consumables"
             },
             {
                 name: "Safety",
-                link: "/"
+                link: "/safety"
             },
             {
                 name: "New Products",
-                link: "/"
+                link: "/new-products"
             },
             {
                 name: "Promotions",
-                link: "/"
+                link: "/promotions"
             },
             {
                 name: "Browse By Brand",
-                link: "/"
+                link: "/brands"
             },
             {
                 name: "Browse By Industry",
-                link: "/"
+                link: "/industries"
             },
         ]
 
@@ -59,19 +59,19 @@ export const NavItems = [
         children: [
             {
                 name: "Solutions By Industry",
-                link: "/"
+                link: "/solutions/industry"
             },
             {
                 name: "Solutions By Process",
-                link: "/"
+                link: "/solutions/process"
             },
             {
                 name: "Software Solutions",
-                link: "/"
+                link: "/solutions/software"
             },
             {
                 name: "Services",
-                link: "/"
+                link: "/services"
             },
         ]
     },
@@ -80,19 +80,19 @@ export const NavItems = [
         children: [
             {
                 name: "Solutions By Industry",
-                link: "/"
+                link: "/solutions/industry"
             },
             {
                 name: "Solutions By Process",
-                link: "/"
+                link: "/solutions/process"
             },
             {
                 name: "Software Solutions",
-                link: "/"
+                link: "/solutions/software"
             },
             {
                 name: "Services",
-                link: "/"
+                link: "/services"
             },
         ]
     },
@@ -101,19 +101,19 @@ export const NavItems = [
         children: [
             {
                 name: "Solutions By Industry",
-                link: "/"
+                link: "/solutions/industry"
             },
             {
                 name: "Solutions By Process",
-                link: "/"
+                link: "/solutions/process"
             },
             {
                 name: "Software Solutions",
-                link: "/"
+                link: "/solutions/software"
             },
             {
                 name: "Services",
-                link: "/"
+                link: "/services"
             },
         ]
     },

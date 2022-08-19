@@ -1,5 +1,7 @@
 import React from 'react'
+import { Routes, Route } from "react-router-dom";
 import Header from './components/header/Header.js'
+import Page from './components/Page.js'
 import './App.css';
 
 
@@ -7,9 +9,10 @@ function App() {
   return (
     <div className="App min-h-screen bg-gray-400 pt-32 ">
       <Header />
-      <div className="container m-auto text-center text-4xl bg-gray-400">
-        <h1>Content</h1>
-        </div>
+      <Routes>
+        <Route path=":page" element={<Page />} />
+        <Route path=":solutions/:page" element={<Page />} />
+      </Routes>
     </div>
   );
 }
